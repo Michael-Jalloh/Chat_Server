@@ -3,12 +3,9 @@ from flask.ext.restful import Api, Resource
 from flask.ext.httpauth import HTTPBasicAuth
 from app.models import *
 from app import functions
-from OpenSSL import SSL
+
  
 
-context = SSL.Context(SSL.SSLv3_METHOD)
-context.use_privatekey_file('server.key')
-context.use_certificate_file('server.crt')
 
 app = Flask(__name__)
 app.config.from_object('config')
